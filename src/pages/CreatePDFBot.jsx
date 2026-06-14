@@ -92,9 +92,9 @@ export default function CreatePDFBot() {
   }
 
   return (
-    <section className="max-w-xl rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-      <h2 className="text-2xl font-bold text-slate-950">Create PDF Bot</h2>
-      <p className="mt-2 text-slate-600">
+    <section className="max-w-xl rounded-lg border border-[#26354F] bg-[#1B2740] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.28)]">
+      <h2 className="text-2xl font-bold text-white">Create PDF Bot</h2>
+      <p className="mt-2 text-[#94A3B8]">
         Upload a PDF and create a bot from its document content.
       </p>
 
@@ -102,7 +102,7 @@ export default function CreatePDFBot() {
         <div>
           <label
             htmlFor="pdf-bot-name"
-            className="block text-sm font-medium text-slate-700"
+            className="block text-sm font-medium text-slate-300"
           >
             Bot Name
           </label>
@@ -113,14 +113,14 @@ export default function CreatePDFBot() {
             onChange={(event) => setBotName(event.target.value)}
             placeholder="Research PDF Bot"
             disabled={isSubmitting}
-            className="mt-2 w-full rounded-md border border-slate-300 px-3 py-2 text-slate-950 outline-none transition focus:border-slate-950 focus:ring-2 focus:ring-slate-200 disabled:cursor-not-allowed disabled:bg-slate-100"
+            className="mt-2 w-full rounded-md border border-[#26354F] bg-[#1B2740] px-3 py-2 text-white outline-none transition placeholder:text-[#94A3B8] focus:border-[#7C3AED] focus:ring-2 focus:ring-[#7C3AED]/20 disabled:cursor-not-allowed disabled:bg-[#26354F] disabled:text-[#94A3B8]"
           />
         </div>
 
         <div>
           <label
             htmlFor="pdf-file"
-            className="block text-sm font-medium text-slate-700"
+            className="block text-sm font-medium text-slate-300"
           >
             PDF File
           </label>
@@ -130,15 +130,15 @@ export default function CreatePDFBot() {
             accept="application/pdf,.pdf"
             onChange={handleFileChange}
             disabled={isSubmitting}
-            className="mt-2 w-full rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-700 file:mr-4 file:rounded-md file:border-0 file:bg-slate-950 file:px-3 file:py-2 file:text-sm file:font-medium file:text-white disabled:cursor-not-allowed disabled:bg-slate-100"
+            className="mt-2 w-full rounded-md border border-[#26354F] bg-[#1B2740] px-3 py-2 text-sm text-white transition file:mr-4 file:rounded-md file:border-0 file:bg-[#7C3AED] file:px-3 file:py-2 file:text-sm file:font-medium file:text-white hover:file:bg-[#8B5CF6] disabled:cursor-not-allowed disabled:bg-[#26354F] disabled:text-[#94A3B8]"
           />
           {pdfFile && (
-            <p className="mt-2 text-sm text-slate-600">{pdfFile.name}</p>
+            <p className="mt-2 text-sm text-[#94A3B8]">{pdfFile.name}</p>
           )}
         </div>
 
         {progressStep && (
-          <div className="rounded-md border border-blue-200 bg-blue-50 px-3 py-2 text-sm text-blue-700">
+          <div className="rounded-md border border-[#F59E0B]/40 bg-[#F59E0B]/10 px-3 py-2 text-sm text-[#F59E0B]">
             <p>{progressLabels[progressStep]}</p>
             {progressStep === 'uploading' && uploadPercent > 0 && (
               <p className="mt-1">{uploadPercent}% uploaded</p>
@@ -147,13 +147,13 @@ export default function CreatePDFBot() {
         )}
 
         {error && (
-          <p className="rounded-md border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700">
+          <p className="rounded-md border border-[#EF4444]/40 bg-[#EF4444]/10 px-3 py-2 text-sm text-[#EF4444]">
             {error}
           </p>
         )}
 
         {successMessage && (
-          <p className="rounded-md border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm text-emerald-700">
+          <p className="rounded-md border border-[#10B981]/40 bg-[#10B981]/10 px-3 py-2 text-sm text-[#10B981]">
             {successMessage}
           </p>
         )}
@@ -161,7 +161,7 @@ export default function CreatePDFBot() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="rounded-md bg-slate-950 px-4 py-2 text-sm font-medium text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:bg-slate-400"
+          className="rounded-md bg-[#7C3AED] px-4 py-2 text-sm font-medium text-white shadow-[0_0_22px_rgba(124,58,237,0.28)] transition hover:bg-[#8B5CF6] hover:shadow-[0_0_28px_rgba(124,58,237,0.42)] disabled:cursor-not-allowed disabled:bg-[#26354F] disabled:text-[#94A3B8] disabled:shadow-none"
         >
           Create PDF Bot
         </button>

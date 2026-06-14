@@ -32,8 +32,8 @@ export default function Dashboard() {
   return (
     <section className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold text-slate-950">Dashboard</h2>
-        <p className="mt-1 text-slate-600">
+        <h2 className="text-2xl font-bold text-white">Dashboard</h2>
+        <p className="mt-1 text-[#94A3B8]">
           Overview placeholder for your BotForge AI workspace.
         </p>
       </div>
@@ -44,13 +44,13 @@ export default function Dashboard() {
         ))}
       </div>
 
-      <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+      <div className="rounded-lg border border-[#26354F] bg-[#1B2740] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.28)]">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h3 className="text-lg font-semibold text-slate-950">
+            <h3 className="text-lg font-semibold text-white">
               Backend Connection
             </h3>
-            <p className="mt-1 text-sm text-slate-600">
+            <p className="mt-1 text-sm text-[#94A3B8]">
               Fetch bots from the FastAPI backend.
             </p>
           </div>
@@ -59,14 +59,14 @@ export default function Dashboard() {
             type="button"
             onClick={handleTestBackendConnection}
             disabled={isLoading}
-            className="rounded-md bg-slate-950 px-4 py-2 text-sm font-medium text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:bg-slate-400"
+            className="rounded-md bg-[#7C3AED] px-4 py-2 text-sm font-medium text-white shadow-[0_0_22px_rgba(124,58,237,0.28)] transition hover:bg-[#8B5CF6] hover:shadow-[0_0_28px_rgba(124,58,237,0.42)] disabled:cursor-not-allowed disabled:bg-[#26354F] disabled:text-[#94A3B8] disabled:shadow-none"
           >
             {isLoading ? 'Loading...' : 'Test Backend Connection'}
           </button>
         </div>
 
         {error && (
-          <p className="mt-4 rounded-md border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700">
+          <p className="mt-4 rounded-md border border-[#EF4444]/40 bg-[#EF4444]/10 px-3 py-2 text-sm text-[#EF4444]">
             {error}
           </p>
         )}
@@ -76,10 +76,10 @@ export default function Dashboard() {
             {bots.map((bot) => (
               <div
                 key={`${bot.bot_name}-${bot.type}`}
-                className="rounded-md border border-slate-200 px-4 py-3"
+                className="rounded-md border border-[#26354F] bg-[#071126]/40 px-4 py-3 transition hover:border-[#7C3AED] hover:bg-[#7C3AED]/10"
               >
-                <p className="font-medium text-slate-950">{bot.bot_name}</p>
-                <p className="text-sm capitalize text-slate-600">
+                <p className="font-medium text-white">{bot.bot_name}</p>
+                <p className="text-sm capitalize text-[#94A3B8]">
                   {bot.type}
                 </p>
               </div>

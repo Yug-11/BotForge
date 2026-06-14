@@ -14,3 +14,27 @@ export async function chat(collectionName, question) {
     })
   }
 }
+
+export async function getChatHistory(botId) {
+  try {
+    const response = await api.get(`/chat-history/${encodeURIComponent(botId)}`)
+    return response.data
+  } catch (error) {
+    throw new Error(getApiErrorMessage(error, 'Unable to load chat history.'), {
+      cause: error,
+    })
+  }
+}
+
+export async function clearChatHistory(botId) {
+  try {
+    const response = await api.delete(
+      `/chat-history/${encodeURIComponent(botId)}`,
+    )
+    return response.data
+  } catch (error) {
+    throw new Error(getApiErrorMessage(error, 'Unable to clear chat history.'), {
+      cause: error,
+    })
+  }
+}

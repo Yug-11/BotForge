@@ -6,7 +6,7 @@ import AppRoutes from './routes/AppRoutes.jsx'
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-slate-100 text-slate-950">
+      <div className="min-h-screen bg-[#071126] text-white">
         <div className="flex min-h-screen flex-col md:flex-row">
           <Sidebar />
           <div className="flex min-w-0 flex-1 flex-col">
